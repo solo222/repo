@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/hello-shiro/hello-shiro.iml" filepath="$PROJECT_DIR$/hello-shiro/hello-shiro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shiro-springboot/shiro-springboot.iml" filepath="$PROJECT_DIR$/shiro-springboot/shiro-springboot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot-08-shiro.iml" filepath="$PROJECT_DIR$/springboot-08-shiro.iml" />
+    </modules>
+  </component>
+</project>

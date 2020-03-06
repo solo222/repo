@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="hello-shiro" target="1.5" />
+      <module name="shiro-springboot" target="1.8" />
+      <module name="springboot-08-shiro" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

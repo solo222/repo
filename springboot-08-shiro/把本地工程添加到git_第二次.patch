@@ -1,0 +1,1748 @@
+Index: springboot-shiro/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- springboot-shiro/.gitignore	(date 1583133263347)
++++ springboot-shiro/.gitignore	(date 1583133263347)
+@@ -0,0 +1,31 @@
++HELP.md
++target/
++!.mvn/wrapper/maven-wrapper.jar
++!**/src/main/**
++!**/src/test/**
++
++### STS ###
++.apt_generated
++.classpath
++.factorypath
++.project
++.settings
++.springBeans
++.sts4-cache
++
++### IntelliJ IDEA ###
++.idea
++*.iws
++*.iml
++*.ipr
++
++### NetBeans ###
++/nbproject/private/
++/nbbuild/
++/dist/
++/nbdist/
++/.nb-gradle/
++build/
++
++### VS Code ###
++.vscode/
+Index: springboot-shiro/mvnw.cmd
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- springboot-shiro/mvnw.cmd	(date 1583133263344)
++++ springboot-shiro/mvnw.cmd	(date 1583133263344)
+@@ -0,0 +1,182 @@
++@REM ----------------------------------------------------------------------------
++@REM Licensed to the Apache Software Foundation (ASF) under one
++@REM or more contributor license agreements.  See the NOTICE file
++@REM distributed with this work for additional information
++@REM regarding copyright ownership.  The ASF licenses this file
++@REM to you under the Apache License, Version 2.0 (the
++@REM "License"); you may not use this file except in compliance
++@REM with the License.  You may obtain a copy of the License at
++@REM
++@REM    https://www.apache.org/licenses/LICENSE-2.0
++@REM
++@REM Unless required by applicable law or agreed to in writing,
++@REM software distributed under the License is distributed on an
++@REM "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
++@REM KIND, either express or implied.  See the License for the
++@REM specific language governing permissions and limitations
++@REM under the License.
++@REM ----------------------------------------------------------------------------
++
++@REM ----------------------------------------------------------------------------
++@REM Maven Start Up Batch script
++@REM
++@REM Required ENV vars:
++@REM JAVA_HOME - location of a JDK home dir
++@REM
++@REM Optional ENV vars
++@REM M2_HOME - location of maven2's installed home dir
++@REM MAVEN_BATCH_ECHO - set to 'on' to enable the echoing of the batch commands
++@REM MAVEN_BATCH_PAUSE - set to 'on' to wait for a keystroke before ending
++@REM MAVEN_OPTS - parameters passed to the Java VM when running Maven
++@REM     e.g. to debug Maven itself, use
++@REM set MAVEN_OPTS=-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000
++@REM MAVEN_SKIP_RC - flag to disable loading of mavenrc files
++@REM ----------------------------------------------------------------------------
++
++@REM Begin all REM lines with '@' in case MAVEN_BATCH_ECHO is 'on'
++@echo off
++@REM set title of command window
++title %0
++@REM enable echoing by setting MAVEN_BATCH_ECHO to 'on'
++@if "%MAVEN_BATCH_ECHO%" == "on"  echo %MAVEN_BATCH_ECHO%
++
++@REM set %HOME% to equivalent of $HOME
++if "%HOME%" == "" (set "HOME=%HOMEDRIVE%%HOMEPATH%")
++
++@REM Execute a user defined script before this one
++if not "%MAVEN_SKIP_RC%" == "" goto skipRcPre
++@REM check for pre script, once with legacy .bat ending and once with .cmd ending
++if exist "%HOME%\mavenrc_pre.bat" call "%HOME%\mavenrc_pre.bat"
++if exist "%HOME%\mavenrc_pre.cmd" call "%HOME%\mavenrc_pre.cmd"
++:skipRcPre
++
++@setlocal
++
++set ERROR_CODE=0
++
++@REM To isolate internal variables from possible post scripts, we use another setlocal
++@setlocal
++
++@REM ==== START VALIDATION ====
++if not "%JAVA_HOME%" == "" goto OkJHome
++
++echo.
++echo Error: JAVA_HOME not found in your environment. >&2
++echo Please set the JAVA_HOME variable in your environment to match the >&2
++echo location of your Java installation. >&2
++echo.
++goto error
++
++:OkJHome
++if exist "%JAVA_HOME%\bin\java.exe" goto init
++
++echo.
++echo Error: JAVA_HOME is set to an invalid directory. >&2
++echo JAVA_HOME = "%JAVA_HOME%" >&2
++echo Please set the JAVA_HOME variable in your environment to match the >&2
++echo location of your Java installation. >&2
++echo.
++goto error
++
++@REM ==== END VALIDATION ====
++
++:init
++
++@REM Find the project base dir, i.e. the directory that contains the folder ".mvn".
++@REM Fallback to current working directory if not found.
++
++set MAVEN_PROJECTBASEDIR=%MAVEN_BASEDIR%
++IF NOT "%MAVEN_PROJECTBASEDIR%"=="" goto endDetectBaseDir
++
++set EXEC_DIR=%CD%
++set WDIR=%EXEC_DIR%
++:findBaseDir
++IF EXIST "%WDIR%"\.mvn goto baseDirFound
++cd ..
++IF "%WDIR%"=="%CD%" goto baseDirNotFound
++set WDIR=%CD%
++goto findBaseDir
++
++:baseDirFound
++set MAVEN_PROJECTBASEDIR=%WDIR%
++cd "%EXEC_DIR%"
++goto endDetectBaseDir
++
++:baseDirNotFound
++set MAVEN_PROJECTBASEDIR=%EXEC_DIR%
++cd "%EXEC_DIR%"
++
++:endDetectBaseDir
++
++IF NOT EXIST "%MAVEN_PROJECTBASEDIR%\.mvn\jvm.config" goto endReadAdditionalConfig
++
++@setlocal EnableExtensions EnableDelayedExpansion
++for /F "usebackq delims=" %%a in ("%MAVEN_PROJECTBASEDIR%\.mvn\jvm.config") do set JVM_CONFIG_MAVEN_PROPS=!JVM_CONFIG_MAVEN_PROPS! %%a
++@endlocal & set JVM_CONFIG_MAVEN_PROPS=%JVM_CONFIG_MAVEN_PROPS%
++
++:endReadAdditionalConfig
++
++SET MAVEN_JAVA_EXE="%JAVA_HOME%\bin\java.exe"
++set WRAPPER_JAR="%MAVEN_PROJECTBASEDIR%\.mvn\wrapper\maven-wrapper.jar"
++set WRAPPER_LAUNCHER=org.apache.maven.wrapper.MavenWrapperMain
++
++set DOWNLOAD_URL="https://repo.maven.apache.org/maven2/io/takari/maven-wrapper/0.5.6/maven-wrapper-0.5.6.jar"
++
++FOR /F "tokens=1,2 delims==" %%A IN ("%MAVEN_PROJECTBASEDIR%\.mvn\wrapper\maven-wrapper.properties") DO (
++    IF "%%A"=="wrapperUrl" SET DOWNLOAD_URL=%%B
++)
++
++@REM Extension to allow automatically downloading the maven-wrapper.jar from Maven-central
++@REM This allows using the maven wrapper in projects that prohibit checking in binary data.
++if exist %WRAPPER_JAR% (
++    if "%MVNW_VERBOSE%" == "true" (
++        echo Found %WRAPPER_JAR%
++    )
++) else (
++    if not "%MVNW_REPOURL%" == "" (
++        SET DOWNLOAD_URL="%MVNW_REPOURL%/io/takari/maven-wrapper/0.5.6/maven-wrapper-0.5.6.jar"
++    )
++    if "%MVNW_VERBOSE%" == "true" (
++        echo Couldn't find %WRAPPER_JAR%, downloading it ...
++        echo Downloading from: %DOWNLOAD_URL%
++    )
++
++    powershell -Command "&{"^
++		"$webclient = new-object System.Net.WebClient;"^
++		"if (-not ([string]::IsNullOrEmpty('%MVNW_USERNAME%') -and [string]::IsNullOrEmpty('%MVNW_PASSWORD%'))) {"^
++		"$webclient.Credentials = new-object System.Net.NetworkCredential('%MVNW_USERNAME%', '%MVNW_PASSWORD%');"^
++		"}"^
++		"[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; $webclient.DownloadFile('%DOWNLOAD_URL%', '%WRAPPER_JAR%')"^
++		"}"
++    if "%MVNW_VERBOSE%" == "true" (
++        echo Finished downloading %WRAPPER_JAR%
++    )
++)
++@REM End of extension
++
++@REM Provide a "standardized" way to retrieve the CLI args that will
++@REM work with both Windows and non-Windows executions.
++set MAVEN_CMD_LINE_ARGS=%*
++
++%MAVEN_JAVA_EXE% %JVM_CONFIG_MAVEN_PROPS% %MAVEN_OPTS% %MAVEN_DEBUG_OPTS% -classpath %WRAPPER_JAR% "-Dmaven.multiModuleProjectDirectory=%MAVEN_PROJECTBASEDIR%" %WRAPPER_LAUNCHER% %MAVEN_CONFIG% %*
++if ERRORLEVEL 1 goto error
++goto end
++
++:error
++set ERROR_CODE=1
++
++:end
++@endlocal & set ERROR_CODE=%ERROR_CODE%
++
++if not "%MAVEN_SKIP_RC%" == "" goto skipRcPost
++@REM check for post script, once with legacy .bat ending and once with .cmd ending
++if exist "%HOME%\mavenrc_post.bat" call "%HOME%\mavenrc_post.bat"
++if exist "%HOME%\mavenrc_post.cmd" call "%HOME%\mavenrc_post.cmd"
++:skipRcPost
++
++@REM pause the script if MAVEN_BATCH_PAUSE is set to 'on'
++if "%MAVEN_BATCH_PAUSE%" == "on" pause
++
++if "%MAVEN_TERMINATE_CMD%" == "on" exit %ERROR_CODE%
++
++exit /B %ERROR_CODE%
+Index: springboot-shiro/.mvn/wrapper/maven-wrapper.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>GBK
+===================================================================
+--- springboot-shiro/.mvn/wrapper/maven-wrapper.properties	(date 1583133263343)
++++ springboot-shiro/.mvn/wrapper/maven-wrapper.properties	(date 1583133263343)
+@@ -0,0 +1,2 @@
++distributionUrl=https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.6.3/apache-maven-3.6.3-bin.zip
++wrapperUrl=https://repo.maven.apache.org/maven2/io/takari/maven-wrapper/0.5.6/maven-wrapper-0.5.6.jar
+Index: springboot-shiro/src/main/resources/templates/test.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- springboot-shiro/src/main/resources/templates/test.html	(date 1583133303456)
++++ springboot-shiro/src/main/resources/templates/test.html	(date 1583133303456)
+@@ -0,0 +1,12 @@
++<!DOCTYPE html>
++<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
++      xmlns:th="http://www.thymeleaf.org">
++<meta>
++<meta charset="UTF-8">
++<title>测试Thymeleaf的使用</title>
++</head>
++<body>
++<h3 th:test="${name}}"></h3>
++
++</body>
++</html>
+\ No newline at end of file
+Index: springboot-shiro/WEB-INF/web.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- springboot-shiro/WEB-INF/web.xml	(date 1583136336584)
++++ springboot-shiro/WEB-INF/web.xml	(date 1583136336584)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
++         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
++         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
++         version="4.0">
++</web-app>
+\ No newline at end of file
+Index: springboot-shiro/.mvn/wrapper/MavenWrapperDownloader.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- springboot-shiro/.mvn/wrapper/MavenWrapperDownloader.java	(date 1583133303230)
++++ springboot-shiro/.mvn/wrapper/MavenWrapperDownloader.java	(date 1583133303230)
+@@ -0,0 +1,118 @@
++/*
++ * Copyright 2007-present the original author or authors.
++ *
++ * Licensed under the Apache License, Version 2.0 (the "License");
++ * you may not use this file except in compliance with the License.
++ * You may obtain a copy of the License at
++ *
++ *      https://www.apache.org/licenses/LICENSE-2.0
++ *
++ * Unless required by applicable law or agreed to in writing, software
++ * distributed under the License is distributed on an "AS IS" BASIS,
++ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
++ * See the License for the specific language governing permissions and
++ * limitations under the License.
++ */
++
++import java.net.*;
++import java.io.*;
++import java.nio.channels.*;
++import java.util.Properties;
++
++public class MavenWrapperDownloader {
++
++    private static final String WRAPPER_VERSION = "0.5.6";
++    /**
++     * Default URL to download the maven-wrapper.jar from, if no 'downloadUrl' is provided.
++     */
++    private static final String DEFAULT_DOWNLOAD_URL = "https://repo.maven.apache.org/maven2/io/takari/maven-wrapper/"
++            + WRAPPER_VERSION + "/maven-wrapper-" + WRAPPER_VERSION + ".jar";
++
++    /**
++     * Path to the maven-wrapper.properties file, which might contain a downloadUrl property to
++     * use instead of the default one.
++     */
++    private static final String MAVEN_WRAPPER_PROPERTIES_PATH =
++            ".mvn/wrapper/maven-wrapper.properties";
++
++    /**
++     * Path where the maven-wrapper.jar will be saved to.
++     */
++    private static final String MAVEN_WRAPPER_JAR_PATH =
++            ".mvn/wrapper/maven-wrapper.jar";
++
++    /**
++     * Name of the property which should be used to override the default download url for the wrapper.
++     */
++    private static final String PROPERTY_NAME_WRAPPER_URL = "wrapperUrl";
++
++    public static void main(String args[]) {
++        System.out.println("- Downloader started");
++        File baseDirectory = new File(args[0]);
++        System.out.println("- Using base directory: " + baseDirectory.getAbsolutePath());
++
++        // If the maven-wrapper.properties exists, read it and check if it contains a custom
++        // wrapperUrl parameter.
++        File mavenWrapperPropertyFile = new File(baseDirectory, MAVEN_WRAPPER_PROPERTIES_PATH);
++        String url = DEFAULT_DOWNLOAD_URL;
++        if (mavenWrapperPropertyFile.exists()) {
++            FileInputStream mavenWrapperPropertyFileInputStream = null;
++            try {
++                mavenWrapperPropertyFileInputStream = new FileInputStream(mavenWrapperPropertyFile);
++                Properties mavenWrapperProperties = new Properties();
++                mavenWrapperProperties.load(mavenWrapperPropertyFileInputStream);
++                url = mavenWrapperProperties.getProperty(PROPERTY_NAME_WRAPPER_URL, url);
++            } catch (IOException e) {
++                System.out.println("- ERROR loading '" + MAVEN_WRAPPER_PROPERTIES_PATH + "'");
++            } finally {
++                try {
++                    if (mavenWrapperPropertyFileInputStream != null) {
++                        mavenWrapperPropertyFileInputStream.close();
++                    }
++                } catch (IOException e) {
++                    // Ignore ...
++                }
++            }
++        }
++        System.out.println("- Downloading from: " + url);
++
++        File outputFile = new File(baseDirectory.getAbsolutePath(), MAVEN_WRAPPER_JAR_PATH);
++        if (!outputFile.getParentFile().exists()) {
++            if (!outputFile.getParentFile().mkdirs()) {
++                System.out.println(
++                        "- ERROR creating output directory '" + outputFile.getParentFile().getAbsolutePath() + "'");
++            }
++        }
++        System.out.println("- Downloading to: " + outputFile.getAbsolutePath());
++        try {
++            downloadFileFromURL(url, outputFile);
++            System.out.println("Done");
++            System.exit(0);
++        } catch (Throwable e) {
++            System.out.println("- Error downloading");
++            e.printStackTrace();
++            System.exit(1);
++        }
++    }
++
++    private static void downloadFileFromURL(String urlString, File destination) throws Exception {
++        if (System.getenv("MVNW_USERNAME") != null && System.getenv("MVNW_PASSWORD") != null) {
++            String username = System.getenv("MVNW_USERNAME");
++            char[] password = System.getenv("MVNW_PASSWORD").toCharArray();
++            Authenticator.setDefault(new Authenticator() {
++                @Override
++                protected PasswordAuthentication getPasswordAuthentication() {
++                    return new PasswordAuthentication(username, password);
++                }
++            });
++        }
++        URL website = new URL(urlString);
++        ReadableByteChannel rbc;
++        rbc = Channels.newChannel(website.openStream());
++        FileOutputStream fos = new FileOutputStream(destination);
++        fos.getChannel().transferFrom(rbc, 0, Long.MAX_VALUE);
++        fos.close();
++        rbc.close();
++    }
++
++}
+Index: springboot-shiro/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- springboot-shiro/pom.xml	(date 1583138749224)
++++ springboot-shiro/pom.xml	(date 1583138749224)
+@@ -0,0 +1,38 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
++         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
++    <modelVersion>4.0.0</modelVersion>
++    <parent>
++        <groupId>org.springframework.boot</groupId>
++        <artifactId>spring-boot-starter-parent</artifactId>
++        <version>2.0.1.RELEASE</version>
++    </parent>
++    <groupId>com.itheima</groupId>
++    <artifactId>springboot-shiro</artifactId>
++    <version>0.0.1-SNAPSHOT</version>
++    <name>springboot-shiro</name>
++    <description>Demo project for Spring Boot</description>
++
++    <properties>
++        <java.version>1.8</java.version>
++    </properties>
++
++    <dependencies>
++        <dependency>
++            <groupId>org.springframework.boot</groupId>
++            <artifactId>spring-boot-starter-web</artifactId>
++        </dependency>
++
++
++    </dependencies>
++
++    <build>
++        <plugins>
++            <plugin>
++                <groupId>org.springframework.boot</groupId>
++                <artifactId>spring-boot-maven-plugin</artifactId>
++            </plugin>
++        </plugins>
++    </build>
++
++</project>
+Index: springboot-shiro/src/main/resources/templates/success.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- springboot-shiro/src/main/resources/templates/success.html	(date 1583133303139)
++++ springboot-shiro/src/main/resources/templates/success.html	(date 1583133303139)
+@@ -0,0 +1,12 @@
++<!DOCTYPE html>
++<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
++      xmlns:th="http://www.thymeleaf.org">
++<meta>
++<meta charset="UTF-8">
++<title>测试Thymeleaf的使用</title>
++</head>
++<body>
++<h3 th:test="${name}}"></h3>
++
++</body>
++</html>
+\ No newline at end of file
+Index: springboot-shiro/src/main/resources/application.properties
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>GBK
+===================================================================
+--- springboot-shiro/src/main/resources/application.properties	(date 1583137077777)
++++ springboot-shiro/src/main/resources/application.properties	(date 1583137077777)
+@@ -0,0 +1,2 @@
++spring.thymeleaf.prefix=classpath:/templates/html/
++spring.thymeleaf.suffix=.html
+Index: springboot-shiro/src/main/java/com/itheima/SpringbootShiroApplication.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- springboot-shiro/src/main/java/com/itheima/SpringbootShiroApplication.java	(date 1583133380600)
++++ springboot-shiro/src/main/java/com/itheima/SpringbootShiroApplication.java	(date 1583133380600)
+@@ -0,0 +1,14 @@
++package com.itheima;
++
++import org.springframework.boot.SpringApplication;
++import org.springframework.boot.autoconfigure.SpringBootApplication;
++
++@SpringBootApplication
++public class SpringbootShiroApplication {
++
++    public static void main(String[] args) {
++
++        SpringApplication.run(SpringbootShiroApplication.class, args);
++    }
++
++}
+Index: springboot-shiro/src/main/resources/templates/ok.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- springboot-shiro/src/main/resources/templates/ok.html	(date 1583133823787)
++++ springboot-shiro/src/main/resources/templates/ok.html	(date 1583133823787)
+@@ -0,0 +1,11 @@
++<!DOCTYPE html>
++<html lang="en">
++<meta>
++<meta charset="UTF-8">
++<title>测试Thymeleaf的使用</title>
++</head>
++<body>
++<h3 >Thymeleaf</h3>
++
++</body>
++</html>
+\ No newline at end of file
+Index: springboot-shiro/src/main/java/com/itheima/controller/UserController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- springboot-shiro/src/main/java/com/itheima/controller/UserController.java	(date 1583137329389)
++++ springboot-shiro/src/main/java/com/itheima/controller/UserController.java	(date 1583137329389)
+@@ -0,0 +1,41 @@
++package com.itheima.controller;
++
++import org.springframework.stereotype.Controller;
++import org.springframework.ui.Model;
++import org.springframework.web.bind.annotation.GetMapping;
++import org.springframework.web.bind.annotation.RequestMapping;
++import org.springframework.web.bind.annotation.ResponseBody;
++
++import java.util.Map;
++
++
++@Controller
++public class UserController {
++    /**
++     * 测试方法
++     *
++     * @return
++     */
++    @GetMapping("/hello")
++    @ResponseBody
++
++    public String hello() {
++        System.out.println("UserController.hello()");
++        return "ok";
++    }
++
++    /**
++     * 测试Thymeleaf
++     *
++     * @param model
++     * @return
++     */
++    @GetMapping("/testThymeleaf")
++    public String testThymeleaf(Model model) {
++        //把数据存入model
++        model.addAttribute("name", "程序员");
++        //返回test.html
++        return "test";
++    }
++
++}
+Index: springboot-shiro/mvnw
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- springboot-shiro/mvnw	(date 1583133264575)
++++ springboot-shiro/mvnw	(date 1583133264575)
+@@ -0,0 +1,322 @@
++#!/bin/sh
++# ----------------------------------------------------------------------------
++# Licensed to the Apache Software Foundation (ASF) under one
++# or more contributor license agreements.  See the NOTICE file
++# distributed with this work for additional information
++# regarding copyright ownership.  The ASF licenses this file
++# to you under the Apache License, Version 2.0 (the
++# "License"); you may not use this file except in compliance
++# with the License.  You may obtain a copy of the License at
++#
++#    https://www.apache.org/licenses/LICENSE-2.0
++#
++# Unless required by applicable law or agreed to in writing,
++# software distributed under the License is distributed on an
++# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
++# KIND, either express or implied.  See the License for the
++# specific language governing permissions and limitations
++# under the License.
++# ----------------------------------------------------------------------------
++
++# ----------------------------------------------------------------------------
++# Maven Start Up Batch script
++#
++# Required ENV vars:
++# ------------------
++#   JAVA_HOME - location of a JDK home dir
++#
++# Optional ENV vars
++# -----------------
++#   M2_HOME - location of maven2's installed home dir
++#   MAVEN_OPTS - parameters passed to the Java VM when running Maven
++#     e.g. to debug Maven itself, use
++#       set MAVEN_OPTS=-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000
++#   MAVEN_SKIP_RC - flag to disable loading of mavenrc files
++# ----------------------------------------------------------------------------
++
++if [ -z "$MAVEN_SKIP_RC" ]; then
++
++  if [ -f /etc/mavenrc ]; then
++    . /etc/mavenrc
++  fi
++
++  if [ -f "$HOME/.mavenrc" ]; then
++    . "$HOME/.mavenrc"
++  fi
++
++fi
++
++# OS specific support.  $var _must_ be set to either true or false.
++cygwin=false
++darwin=false
++mingw=false
++case "$(uname)" in
++CYGWIN*) cygwin=true ;;
++MINGW*) mingw=true ;;
++Darwin*)
++  darwin=true
++  # Use /usr/libexec/java_home if available, otherwise fall back to /Library/Java/Home
++  # See https://developer.apple.com/library/mac/qa/qa1170/_index.html
++  if [ -z "$JAVA_HOME" ]; then
++    if [ -x "/usr/libexec/java_home" ]; then
++      export JAVA_HOME="$(/usr/libexec/java_home)"
++    else
++      export JAVA_HOME="/Library/Java/Home"
++    fi
++  fi
++  ;;
++esac
++
++if [ -z "$JAVA_HOME" ]; then
++  if [ -r /etc/gentoo-release ]; then
++    JAVA_HOME=$(java-config --jre-home)
++  fi
++fi
++
++if [ -z "$M2_HOME" ]; then
++  ## resolve links - $0 may be a link to maven's home
++  PRG="$0"
++
++  # need this for relative symlinks
++  while [ -h "$PRG" ]; do
++    ls=$(ls -ld "$PRG")
++    link=$(expr "$ls" : '.*-> \(.*\)$')
++    if expr "$link" : '/.*' >/dev/null; then
++      PRG="$link"
++    else
++      PRG="$(dirname "$PRG")/$link"
++    fi
++  done
++
++  saveddir=$(pwd)
++
++  M2_HOME=$(dirname "$PRG")/..
++
++  # make it fully qualified
++  M2_HOME=$(cd "$M2_HOME" && pwd)
++
++  cd "$saveddir"
++  # echo Using m2 at $M2_HOME
++fi
++
++# For Cygwin, ensure paths are in UNIX format before anything is touched
++if $cygwin; then
++  [ -n "$M2_HOME" ] &&
++    M2_HOME=$(cygpath --unix "$M2_HOME")
++  [ -n "$JAVA_HOME" ] &&
++    JAVA_HOME=$(cygpath --unix "$JAVA_HOME")
++  [ -n "$CLASSPATH" ] &&
++    CLASSPATH=$(cygpath --path --unix "$CLASSPATH")
++fi
++
++# For Mingw, ensure paths are in UNIX format before anything is touched
++if $mingw; then
++  [ -n "$M2_HOME" ] &&
++    M2_HOME="$( (
++      cd "$M2_HOME"
++      pwd
++    ))"
++  [ -n "$JAVA_HOME" ] &&
++    JAVA_HOME="$( (
++      cd "$JAVA_HOME"
++      pwd
++    ))"
++fi
++
++if [ -z "$JAVA_HOME" ]; then
++  javaExecutable="$(which javac)"
++  if [ -n "$javaExecutable" ] && ! [ "$(expr \"$javaExecutable\" : '\([^ ]*\)')" = "no" ]; then
++    # readlink(1) is not available as standard on Solaris 10.
++    readLink=$(which readlink)
++    if [ ! $(expr "$readLink" : '\([^ ]*\)') = "no" ]; then
++      if $darwin; then
++        javaHome="$(dirname \"$javaExecutable\")"
++        javaExecutable="$(cd \"$javaHome\" && pwd -P)/javac"
++      else
++        javaExecutable="$(readlink -f \"$javaExecutable\")"
++      fi
++      javaHome="$(dirname \"$javaExecutable\")"
++      javaHome=$(expr "$javaHome" : '\(.*\)/bin')
++      JAVA_HOME="$javaHome"
++      export JAVA_HOME
++    fi
++  fi
++fi
++
++if [ -z "$JAVACMD" ]; then
++  if [ -n "$JAVA_HOME" ]; then
++    if [ -x "$JAVA_HOME/jre/sh/java" ]; then
++      # IBM's JDK on AIX uses strange locations for the executables
++      JAVACMD="$JAVA_HOME/jre/sh/java"
++    else
++      JAVACMD="$JAVA_HOME/bin/java"
++    fi
++  else
++    JAVACMD="$(which java)"
++  fi
++fi
++
++if [ ! -x "$JAVACMD" ]; then
++  echo "Error: JAVA_HOME is not defined correctly." >&2
++  echo "  We cannot execute $JAVACMD" >&2
++  exit 1
++fi
++
++if [ -z "$JAVA_HOME" ]; then
++  echo "Warning: JAVA_HOME environment variable is not set."
++fi
++
++CLASSWORLDS_LAUNCHER=org.codehaus.plexus.classworlds.launcher.Launcher
++
++# traverses directory structure from process work directory to filesystem root
++# first directory with .mvn subdirectory is considered project base directory
++find_maven_basedir() {
++
++  if [ -z "$1" ]; then
++    echo "Path not specified to find_maven_basedir"
++    return 1
++  fi
++
++  basedir="$1"
++  wdir="$1"
++  while [ "$wdir" != '/' ]; do
++    if [ -d "$wdir"/.mvn ]; then
++      basedir=$wdir
++      break
++    fi
++    # workaround for JBEAP-8937 (on Solaris 10/Sparc)
++    if [ -d "${wdir}" ]; then
++      wdir=$(
++        cd "$wdir/.."
++        pwd
++      )
++    fi
++    # end of workaround
++  done
++  echo "${basedir}"
++}
++
++# concatenates all lines of a file
++concat_lines() {
++  if [ -f "$1" ]; then
++    echo "$(tr -s '\n' ' ' <"$1")"
++  fi
++}
++
++BASE_DIR=$(find_maven_basedir "$(pwd)")
++if [ -z "$BASE_DIR" ]; then
++  exit 1
++fi
++
++##########################################################################################
++# Extension to allow automatically downloading the maven-wrapper.jar from Maven-central
++# This allows using the maven wrapper in projects that prohibit checking in binary data.
++##########################################################################################
++if [ -r "$BASE_DIR/.mvn/wrapper/maven-wrapper.jar" ]; then
++  if [ "$MVNW_VERBOSE" = true ]; then
++    echo "Found .mvn/wrapper/maven-wrapper.jar"
++  fi
++else
++  if [ "$MVNW_VERBOSE" = true ]; then
++    echo "Couldn't find .mvn/wrapper/maven-wrapper.jar, downloading it ..."
++  fi
++  if [ -n "$MVNW_REPOURL" ]; then
++    jarUrl="$MVNW_REPOURL/io/takari/maven-wrapper/0.5.6/maven-wrapper-0.5.6.jar"
++  else
++    jarUrl="https://repo.maven.apache.org/maven2/io/takari/maven-wrapper/0.5.6/maven-wrapper-0.5.6.jar"
++  fi
++  while IFS="=" read key value; do
++    case "$key" in wrapperUrl)
++      jarUrl="$value"
++      break
++      ;;
++    esac
++  done <"$BASE_DIR/.mvn/wrapper/maven-wrapper.properties"
++  if [ "$MVNW_VERBOSE" = true ]; then
++    echo "Downloading from: $jarUrl"
++  fi
++  wrapperJarPath="$BASE_DIR/.mvn/wrapper/maven-wrapper.jar"
++  if $cygwin; then
++    wrapperJarPath=$(cygpath --path --windows "$wrapperJarPath")
++  fi
++
++  if command -v wget >/dev/null; then
++    if [ "$MVNW_VERBOSE" = true ]; then
++      echo "Found wget ... using wget"
++    fi
++    if [ -z "$MVNW_USERNAME" ] || [ -z "$MVNW_PASSWORD" ]; then
++      wget "$jarUrl" -O "$wrapperJarPath"
++    else
++      wget --http-user=$MVNW_USERNAME --http-password=$MVNW_PASSWORD "$jarUrl" -O "$wrapperJarPath"
++    fi
++  elif command -v curl >/dev/null; then
++    if [ "$MVNW_VERBOSE" = true ]; then
++      echo "Found curl ... using curl"
++    fi
++    if [ -z "$MVNW_USERNAME" ] || [ -z "$MVNW_PASSWORD" ]; then
++      curl -o "$wrapperJarPath" "$jarUrl" -f
++    else
++      curl --user $MVNW_USERNAME:$MVNW_PASSWORD -o "$wrapperJarPath" "$jarUrl" -f
++    fi
++
++  else
++    if [ "$MVNW_VERBOSE" = true ]; then
++      echo "Falling back to using Java to download"
++    fi
++    javaClass="$BASE_DIR/.mvn/wrapper/MavenWrapperDownloader.java"
++    # For Cygwin, switch paths to Windows format before running javac
++    if $cygwin; then
++      javaClass=$(cygpath --path --windows "$javaClass")
++    fi
++    if [ -e "$javaClass" ]; then
++      if [ ! -e "$BASE_DIR/.mvn/wrapper/MavenWrapperDownloader.class" ]; then
++        if [ "$MVNW_VERBOSE" = true ]; then
++          echo " - Compiling MavenWrapperDownloader.java ..."
++        fi
++        # Compiling the Java class
++        ("$JAVA_HOME/bin/javac" "$javaClass")
++      fi
++      if [ -e "$BASE_DIR/.mvn/wrapper/MavenWrapperDownloader.class" ]; then
++        # Running the downloader
++        if [ "$MVNW_VERBOSE" = true ]; then
++          echo " - Running MavenWrapperDownloader.java ..."
++        fi
++        ("$JAVA_HOME/bin/java" -cp .mvn/wrapper MavenWrapperDownloader "$MAVEN_PROJECTBASEDIR")
++      fi
++    fi
++  fi
++fi
++##########################################################################################
++# End of extension
++##########################################################################################
++
++export MAVEN_PROJECTBASEDIR=${MAVEN_BASEDIR:-"$BASE_DIR"}
++if [ "$MVNW_VERBOSE" = true ]; then
++  echo $MAVEN_PROJECTBASEDIR
++fi
++MAVEN_OPTS="$(concat_lines "$MAVEN_PROJECTBASEDIR/.mvn/jvm.config") $MAVEN_OPTS"
++
++# For Cygwin, switch paths to Windows format before running java
++if $cygwin; then
++  [ -n "$M2_HOME" ] &&
++    M2_HOME=$(cygpath --path --windows "$M2_HOME")
++  [ -n "$JAVA_HOME" ] &&
++    JAVA_HOME=$(cygpath --path --windows "$JAVA_HOME")
++  [ -n "$CLASSPATH" ] &&
++    CLASSPATH=$(cygpath --path --windows "$CLASSPATH")
++  [ -n "$MAVEN_PROJECTBASEDIR" ] &&
++    MAVEN_PROJECTBASEDIR=$(cygpath --path --windows "$MAVEN_PROJECTBASEDIR")
++fi
++
++# Provide a "standardized" way to retrieve the CLI args that will
++# work with both Windows and non-Windows executions.
++MAVEN_CMD_LINE_ARGS="$MAVEN_CONFIG $@"
++export MAVEN_CMD_LINE_ARGS
++
++WRAPPER_LAUNCHER=org.apache.maven.wrapper.MavenWrapperMain
++
++exec "$JAVACMD" \
++  $MAVEN_OPTS \
++  -classpath "$MAVEN_PROJECTBASEDIR/.mvn/wrapper/maven-wrapper.jar" \
++  "-Dmaven.home=${M2_HOME}" "-Dmaven.multiModuleProjectDirectory=${MAVEN_PROJECTBASEDIR}" \
++  ${WRAPPER_LAUNCHER} $MAVEN_CONFIG "$@"
+diff --git springboot-shiro/.mvn/wrapper/maven-wrapper.jar springboot-shiro/.mvn/wrapper/maven-wrapper.jar
+new file mode 100644
+index 0000000000000000000000000000000000000000..2cc7d4a55c0cd0092912bf49ae38b3a9e3fd0054
+GIT binary patch
+literal 50710
+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
+z|CUHjf3sPf{I54ojD9-NRqMb)pn(%0A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
+
